@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import getGeoCoding from "../services/getGeoCoding";
+import { setCityAction } from "../redux/weatherReducer/actions";
+import store from "../redux/store";
 
 const Input = () => {
 
@@ -8,6 +10,7 @@ const Input = () => {
     const handleClick = async () => {
         const cityGeoCode = await getGeoCoding(cityRef.current?.value || "");
         console.log(cityGeoCode);
+        store.dispatch(setCityAction(cityGeoCode))
     }
     return(
         <div>
