@@ -13,3 +13,9 @@ export interface ICity {
 }
 
 export type ICityList = ICity[] | any
+
+export interface IState {
+    weatherReducer: {
+        currentCity: ICity
+    }
+}
