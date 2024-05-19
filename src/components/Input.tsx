@@ -3,6 +3,7 @@ const Input = () => {
         <div>
             <label>Insert a city</label>
             <input type='text' placeholder='Ex: London'/>
+            <button>Search</button>
         </div>
     );
 }
