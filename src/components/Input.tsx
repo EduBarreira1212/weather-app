@@ -1,15 +1,13 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import getGeoCoding from "../services/getGeoCoding";
 
 const Input = () => {
 
     const cityRef = useRef<HTMLInputElement>(null)
 
-    const [city, setCity] = useState("");
-
     const handleClick = async () => {
-        setCity(cityRef.current?.value || "");
-        const cityGeoCode = await getGeoCoding(city);
+        const cityGeoCode = await getGeoCoding(cityRef.current?.value || "");
+        console.log(cityGeoCode);
     }
     return(
         <div>
