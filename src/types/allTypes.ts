@@ -17,17 +17,18 @@ export type ICityList = ICity[] | any
 export interface IState {
     weatherReducer: {
         currentCity: ICity
+        currentWeather: IFilteredForecast[]
     }
 }
 
-export interface Weather {
+export interface IWeather {
     id: number;
     main: string;
     description: string;
     icon: string;
 }
   
-export interface Main {
+export interface IMain {
     temp: number;
     feels_like: number;
     temp_min: number;
@@ -39,10 +40,10 @@ export interface Main {
     temp_kf: number;
 }
 
-export interface Forecast {
+export interface IForecast {
     dt: number;
-    main: Main;
-    weather: Weather[];
+    main: IMain;
+    weather: IWeather[];
     clouds: { all: number };
     wind: { speed: number; deg: number; gust: number };
     visibility: number;
@@ -52,11 +53,11 @@ export interface Forecast {
     dt_txt: string;
 }
 
-export interface ApiResponse {
+export interface IApiResponse {
     cod: string;
     message: number;
     cnt: number;
-    list: Forecast[];
+    list: IForecast[];
     city: {
         id: number;
         name: string;
@@ -70,7 +71,7 @@ export interface ApiResponse {
 }
 
 
-export interface FilteredForecast {
+export interface IFilteredForecast {
     date: string;
     temp_min: number;
     temp_max: number;
