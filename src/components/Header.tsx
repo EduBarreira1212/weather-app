@@ -1,7 +1,15 @@
+import styled from "styled-components";
+
+const P = styled.p`
+    font-size: larger;
+    margin: 3vh 0;
+    font-weight: bold;
+`;
+
 const Header = () => {
     return(
         <div>
-            <p>Weather App</p>
+            <P>Weather App</P>
         </div>
     );
 }
