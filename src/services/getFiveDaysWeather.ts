@@ -12,7 +12,9 @@ const getFiveDaysWeather = async (lat: number, lon: number) => {
         const dailyForecastMap = new Map<string, IFilteredForecast>();
 
         forecasts.forEach((forecast: IForecast) => {
+            const dateCity = new Date(forecast.dt_txt);
             const date = forecast.dt_txt.split(' ')[0];
+            
 
             if (dailyForecastMap.has(date)) {
                 const existingForecast = dailyForecastMap.get(date)!;
@@ -20,7 +22,7 @@ const getFiveDaysWeather = async (lat: number, lon: number) => {
                 existingForecast.temp_max = Math.max(existingForecast.temp_max, forecast.main.temp_max);
             } else {
                 dailyForecastMap.set(date, {
-                    date,
+                    date: dateCity.toLocaleDateString("en-US", {weekday: "long"}),
                     temp_min: forecast.main.temp_min,
                     temp_max: forecast.main.temp_max,
                     main: forecast.weather[0].main
