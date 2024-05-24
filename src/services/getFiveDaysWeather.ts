@@ -5,7 +5,7 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 const getFiveDaysWeather = async (lat: number, lon: number) => {
     try {
-        const response = await axios.get<IApiResponse>(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+        const response = await axios.get<IApiResponse>(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
         
         const forecasts: IForecast[] = response.data.list;
 
