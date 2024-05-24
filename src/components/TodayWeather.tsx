@@ -12,6 +12,10 @@ const Div = styled.div`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
+const H3 = styled.h3`
+    margin: 1vh 0;
+`;
+
 const P = styled.p`
     font-weight: bold;
     font-size: medium;
@@ -34,7 +38,9 @@ const TodayWeather = () => {
     const { currentWeather } = useSelector((state: IState) => state.weatherReducer);
     return(
         <Div>
-            <h3>City name: {currentCity?.name}</h3>
+            <H3>City: {currentCity?.name}</H3>
+            <H3>State: {currentCity?.state}</H3>
+            <H3>Country: {currentCity?.country}</H3>
             <P>Today</P>
                 {currentWeather && currentWeather.length > 0 ? (
                     <Div2>
