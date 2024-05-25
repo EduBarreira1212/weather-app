@@ -3,11 +3,13 @@ import { IState } from "../types/allTypes";
 import styled from "styled-components";
 
 const Div = styled.div`
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 2vh;
+    padding-bottom: 3vh;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
