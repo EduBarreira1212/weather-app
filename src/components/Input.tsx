@@ -25,6 +25,7 @@ const Button = styled.button`
     font-size: medium;
     cursor: pointer;
     background-color: #00BFA6;
+    color: black;
     border: none;
     &:hover {
       background-color: #00897B;
@@ -45,9 +46,9 @@ const Input = () => {
     }
     return(
         <FormContainer>
-            <Label>Insert a city</Label>
+            <Label>Insert the city,state and country</Label>
             <div>
-                <StyledInput ref={cityRef} type='text' placeholder='Ex: London'/>
+                <StyledInput ref={cityRef} type='text' placeholder='Ex: Miami,FL,US'/>
                 <Button onClick={handleClick}>Search</Button>
             </div>
         </FormContainer>
