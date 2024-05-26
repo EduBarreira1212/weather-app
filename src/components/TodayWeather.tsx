@@ -37,19 +37,20 @@ const Span = styled.span`
 
 const TodayWeather = () => {
     const { currentCity } = useSelector((state: IState) => state.weatherReducer);
-    const { currentWeather } = useSelector((state: IState) => state.weatherReducer);
+    const { currentTodayWeather } = useSelector((state: IState) => state.weatherReducer);
+
     return(
         <Div>
             <H3>City: {currentCity?.name}</H3>
             <H3>State: {currentCity?.state}</H3>
             <H3>Country: {currentCity?.country}</H3>
             <P>Today</P>
-                {currentWeather && currentWeather.length > 0 ? (
+                {currentTodayWeather ? (
                     <Div2>
-                        <Span>{currentWeather[0].date}</Span>
-                        <Span>min: {currentWeather[0].temp_min} ºC</Span>
-                        <Span>max: {currentWeather[0].temp_max} ºC</Span>
-                        <Span>{currentWeather[0].main}</Span>
+                        <Span>{currentTodayWeather.main.temp} ºC</Span>
+                        <Span>min: {currentTodayWeather.main.temp_min} ºC</Span>
+                        <Span>max: {currentTodayWeather.main.temp_max} ºC</Span>
+                        <Span>{currentTodayWeather.weather[0].main}</Span>
                     </Div2>
                     
                 ) : (
