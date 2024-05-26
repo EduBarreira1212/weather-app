@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import getGeoCoding from "../services/getGeoCoding";
-import { setCityAction, setWeatherAction } from "../redux/weatherReducer/actions";
+import { setCityAction, setTodayWeatherAction, setWeatherAction } from "../redux/weatherReducer/actions";
 import store from "../redux/store";
 import getFiveDaysWeather from "../services/getFiveDaysWeather";
 import styled from "styled-components";
+import getTodayWeather from "../services/getTodayWeather";
 
 const FormContainer = styled.div`
     display: flex;
@@ -38,10 +39,10 @@ const Input = () => {
 
     const handleClick = async () => {
         const cityGeoCode = await getGeoCoding(cityRef.current?.value || "");
-        console.log(cityGeoCode[0]);
         store.dispatch(setCityAction(cityGeoCode));
+        const todayWeather = await getTodayWeather(cityGeoCode[0].lat, cityGeoCode[0].lon);
+        store.dispatch(setTodayWeatherAction(todayWeather!));
         const weather = await getFiveDaysWeather(cityGeoCode[0].lat, cityGeoCode[0].lon);
-        console.log(weather);
         store.dispatch(setWeatherAction(weather!));
     }
     return(
