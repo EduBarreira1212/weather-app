@@ -13,7 +13,7 @@ This project is a Weather App built using React and TypeScript. It fetches weath
 
 ## Stack
 
-**Front-end:** React, TypeScript
+**Front-end:** React, TypeScript  
 **Packages:** Redux, Axios, Styled components
 
 ## Learnings
