@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { IState } from "../types/allTypes";
 import styled from "styled-components";
-import weatherIcons from "../assets/weatherIcons";
 
 const Div = styled.div`
     width: 95%;
