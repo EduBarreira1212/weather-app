@@ -2,6 +2,8 @@
 
 This project is a Weather App built using React and TypeScript. It fetches weather data from three different APIs using Axios and manages state with Redux. The user interface is styled using Styled Components.
 
+Link to see the project: https://weather-app-eb1212.vercel.app/
+
 ## Features
 
 * Fetches weather data from three different APIs
@@ -20,6 +22,26 @@ This project is a Weather App built using React and TypeScript. It fetches weath
 
 In this project i learned how to use Redux, how to setup a store and create reducers
 
+## Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/EduBarreira1212/weather-app.git
+    cd weather-app
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
 
 ## Available Scripts
 
