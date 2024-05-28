@@ -11,7 +11,7 @@ const Div = styled.div`
     margin-top: 2vh;
     padding: 3vh 0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 8px black;
 `;
 
 const H4 = styled.h4`
