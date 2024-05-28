@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { IState } from "../types/allTypes";
 import styled from "styled-components";
+import weatherIcons from "../assets/weatherIcons";
 
 const Div = styled.div`
     width: 95%;
@@ -11,7 +12,7 @@ const Div = styled.div`
     margin-top: 2vh;
     padding-bottom: 3vh;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 8px black;
 `;
 
 const H3 = styled.h3`
