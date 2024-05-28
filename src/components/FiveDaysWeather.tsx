@@ -36,12 +36,16 @@ const FiveDaysWeather = () => {
 
     const { currentWeather } = useSelector((state: IState) => state.weatherReducer);
 
+    const date = new Date();
+
     return(
         <Div>
             <H4>Next days</H4>
             {currentWeather ? (
                 <div>
-                    {currentWeather.map((weather, index) => (
+                    {currentWeather
+                    .filter(weather => weather.date !== date.toLocaleDateString("en-US", {weekday: "long"}))
+                    .map((weather, index) => (
                     <Div2 key={index}>
                         <Span>{weather.date}</Span>
                         <Span>min: {weather.temp_min} ºC</Span>
