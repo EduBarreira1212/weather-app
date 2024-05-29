@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { IState } from "../types/allTypes";
 import { styled } from "styled-components";
+import weatherIcons from "./weatherIcons";
 
 const Div = styled.div`
     width: 95%;
@@ -50,7 +51,7 @@ const FiveDaysWeather = () => {
                         <Span>{weather.date}</Span>
                         <Span>min: {weather.temp_min} ºC</Span>
                         <Span>max: {weather.temp_max} ºC</Span>
-                        <Span>{weather.main}</Span>
+                        <Span>{weatherIcons[weather.main]}</Span>
                     </Div2>
                 ))}
                 </div>
