@@ -28,7 +28,7 @@ const Div2 = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2vw;
+    gap: 3vw;
 `;
 
 const Span = styled.span`

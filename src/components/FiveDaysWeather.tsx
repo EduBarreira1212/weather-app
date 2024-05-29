@@ -24,7 +24,7 @@ const Div2 = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 2vw;
+    gap: 3vw;
     margin: 1.5vh 0;
 `;
 
