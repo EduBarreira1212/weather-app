@@ -10,7 +10,7 @@ const Div = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  background-color: #1A0E4A;
+  background: linear-gradient(188deg, #1A0E4A, #232447, #4B6584, #2E856E, #24A585, #1ABC9C);
   color: white;
 `
 
