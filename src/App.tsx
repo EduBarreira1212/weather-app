@@ -12,6 +12,10 @@ const Div = styled.div`
   justify-content: start;
   background: linear-gradient(188deg, #1A0E4A, #232447, #4B6584, #2E856E, #24A585, #1ABC9C);
   color: white;
+
+  @media (max-width: 500px) {
+    background: linear-gradient(192deg, #1A0E4A, #232447, #4B6584, #2E856E, #24A585, #1ABC9C);
+  }
 `
 
 function App() {
