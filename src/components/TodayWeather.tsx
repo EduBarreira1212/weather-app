@@ -60,13 +60,13 @@ const TodayWeather = () => {
                 {currentTodayWeather ? (
                 <>
                     <Div3>
-                        <SpanTemp>{currentTodayWeather.main.temp} ºC</SpanTemp>
+                        <SpanTemp>{currentTodayWeather.main.temp.toFixed(1)} ºC</SpanTemp>
                         <Span>{weatherIcons[currentTodayWeather.weather[0].main]}</Span>
                     </Div3>
                     <Div2>
-                        <Span>{currentTodayWeather.main.temp_max} ºC</Span>
+                        <Span>{currentTodayWeather.main.temp_max.toFixed(1)} ºC</Span>
                         <Span>/</Span>
-                        <Span>{currentTodayWeather.main.temp_min} ºC</Span>
+                        <Span>{currentTodayWeather.main.temp_min.toFixed(1)} ºC</Span>
                     </Div2>
                 </>
                 ) : (
