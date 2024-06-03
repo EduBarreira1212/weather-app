@@ -31,9 +31,22 @@ const Div2 = styled.div`
     gap: 3vw;
 `;
 
+const Div3 = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    margin-bottom: 2vh;
+`;
+
 const Span = styled.span`
     font-size: medium;
     font-weight: 500;
+`;
+
+const SpanTemp = styled.span`
+    font-size: 3vw;
+    font-weight: 600;
 `;
 
 const TodayWeather = () => {
@@ -42,18 +55,20 @@ const TodayWeather = () => {
 
     return(
         <Div>
-            <H3>City: {currentCity?.name}</H3>
-            <H3>State: {currentCity?.state}</H3>
-            <H3>Country: {currentCity?.country}</H3>
+            <H3>{currentCity?.name}, {currentCity?.state}, {currentCity?.country}</H3>
             <P>Today</P>
                 {currentTodayWeather ? (
-                    <Div2>
-                        <Span>{currentTodayWeather.main.temp} ºC</Span>
-                        <Span>min: {currentTodayWeather.main.temp_min} ºC</Span>
-                        <Span>max: {currentTodayWeather.main.temp_max} ºC</Span>
+                <>
+                    <Div3>
+                        <SpanTemp>{currentTodayWeather.main.temp} ºC</SpanTemp>
                         <Span>{weatherIcons[currentTodayWeather.weather[0].main]}</Span>
+                    </Div3>
+                    <Div2>
+                        <Span>{currentTodayWeather.main.temp_min} ºC</Span>
+                        <Span>/</Span>
+                        <Span>{currentTodayWeather.main.temp_max} ºC</Span>
                     </Div2>
-                    
+                </>
                 ) : (
                     <Span>No weather data available</Span>
                 )}
