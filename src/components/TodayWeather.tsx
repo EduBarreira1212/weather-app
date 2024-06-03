@@ -16,7 +16,7 @@ const Div = styled.div`
 `;
 
 const H3 = styled.h3`
-    margin: 1vh 0;
+    margin: 0.5vh 0;
 `;
 
 const P = styled.p`
@@ -35,7 +35,7 @@ const Div3 = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1vh;
+    gap: 2vh;
     margin-bottom: 2vh;
 `;
 
@@ -45,8 +45,8 @@ const Span = styled.span`
 `;
 
 const SpanTemp = styled.span`
-    font-size: 3vw;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 500;
 `;
 
 const TodayWeather = () => {
