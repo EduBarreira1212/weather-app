@@ -64,9 +64,9 @@ const TodayWeather = () => {
                         <Span>{weatherIcons[currentTodayWeather.weather[0].main]}</Span>
                     </Div3>
                     <Div2>
-                        <Span>{currentTodayWeather.main.temp_min} ºC</Span>
-                        <Span>/</Span>
                         <Span>{currentTodayWeather.main.temp_max} ºC</Span>
+                        <Span>/</Span>
+                        <Span>{currentTodayWeather.main.temp_min} ºC</Span>
                     </Div2>
                 </>
                 ) : (
