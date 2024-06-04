@@ -28,6 +28,14 @@ In this project i learned how to use Redux, how to setup a store and create redu
 
 Make sure you have Node.js and npm installed on your machine.
 
+### Variáveis de Ambiente
+
+To run this project, you need to add this variable in your .env file
+
+`REACT_APP_API_KEY`
+
+To create the API key you have to sign up in this link: https://home.openweathermap.org/users/sign_up
+
 ### Installation
 
 1. Clone the repository:
@@ -41,6 +49,11 @@ Make sure you have Node.js and npm installed on your machine.
 
     ```bash
     npm install
+    ```
+3. Inicie o servidor
+
+    ```bash
+      npm run start
     ```
 
 ## Available Scripts
