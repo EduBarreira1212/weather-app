@@ -49,8 +49,7 @@ const FiveDaysWeather = () => {
                     .map((weather, index) => (
                     <Div2 key={index}>
                         <Span>{weather.date}</Span>
-                        <Span>min: {weather.temp_min} ºC</Span>
-                        <Span>max: {weather.temp_max} ºC</Span>
+                        <Span>{weather.temp_max.toFixed(1)} ºC  /  {weather.temp_min.toFixed(1)} ºC</Span>
                         <Span>{weatherIcons[weather.main]}</Span>
                     </Div2>
                 ))}
