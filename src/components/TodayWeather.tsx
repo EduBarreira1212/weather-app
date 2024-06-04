@@ -54,6 +54,14 @@ const SpanIcon = styled.span`
     font-weight: 500;
 `;
 
+const DivIcon = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25vh;
+`;
+
 const TodayWeather = () => {
     const { currentCity } = useSelector((state: IState) => state.weatherReducer);
     const { currentTodayWeather } = useSelector((state: IState) => state.weatherReducer);
@@ -75,7 +83,7 @@ const TodayWeather = () => {
                     </Div2>
                 </Div>
                 ) : (
-                    <></>
+                    <DivIcon>{weatherIcons.InitialIcon}</DivIcon>
                 )}
         </>
     );
