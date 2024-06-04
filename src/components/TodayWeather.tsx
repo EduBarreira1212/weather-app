@@ -59,11 +59,11 @@ const TodayWeather = () => {
     const { currentTodayWeather } = useSelector((state: IState) => state.weatherReducer);
 
     return(
-        <Div>
-            <H3>{currentCity?.name}, {currentCity?.state}, {currentCity?.country}</H3>
-            <P>Today</P>
-                {currentTodayWeather ? (
-                <>
+        <>
+            {currentCity && currentTodayWeather ? (
+                <Div>
+                    <H3>{currentCity.name}, {currentCity.state}, {currentCity.country}</H3>
+                    <P>Today</P>
                     <Div3>
                         <SpanTemp>{currentTodayWeather.main.temp.toFixed(1)} ºC</SpanTemp>
                         <SpanIcon>{weatherIcons[currentTodayWeather.weather[0].main]}</SpanIcon>
@@ -73,11 +73,11 @@ const TodayWeather = () => {
                         <Span>/</Span>
                         <Span>{currentTodayWeather.main.temp_min.toFixed(1)} ºC</Span>
                     </Div2>
-                </>
+                </Div>
                 ) : (
-                    <Span>No weather data available</Span>
+                    <></>
                 )}
-        </Div>
+        </>
     );
 }
 

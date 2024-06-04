@@ -40,10 +40,10 @@ const FiveDaysWeather = () => {
     const date = new Date();
 
     return(
-        <Div>
-            <H4>Next days</H4>
+        <>
             {currentWeather ? (
-                <div>
+                <Div>
+                    <H4>Next days</H4>
                     {currentWeather
                     .filter(weather => weather.date !== date.toLocaleDateString("en-US", {weekday: "long"}))
                     .map((weather, index) => (
@@ -53,11 +53,11 @@ const FiveDaysWeather = () => {
                         <Span>{weatherIcons[weather.main]}</Span>
                     </Div2>
                 ))}
-                </div>
+                </Div>
             ) : (
-                <Span>No weather data available</Span>
+                <></>
             )}
-        </Div>
+        </>
     );
 }
 
