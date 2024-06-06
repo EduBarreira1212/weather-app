@@ -33,6 +33,12 @@ const Button = styled.button`
     }
 `;
 
+const ErrorMessage = styled.span`
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+`;
+
 const Input = () => {
 
     const cityRef = useRef<HTMLInputElement>(null)
@@ -58,7 +64,7 @@ const Input = () => {
                 <StyledInput ref={cityRef} type='text' placeholder='Ex: Miami,FL,US'/>
                 <Button onClick={handleClick}>Search</Button>
             </div>
-            {error && <span>{error}</span>}
+            {error && <ErrorMessage>{error}</ErrorMessage>}
         </FormContainer>
     );
 }
