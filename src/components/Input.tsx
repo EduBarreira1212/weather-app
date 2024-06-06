@@ -51,6 +51,7 @@ const Input = () => {
             setError("Insert a valid city");
             return;
         }
+        setError(null);
         store.dispatch(setCityAction(cityGeoCode));
         const todayWeather = await getTodayWeather(cityGeoCode[0].lat, cityGeoCode[0].lon);
         store.dispatch(setTodayWeatherAction(todayWeather!));
