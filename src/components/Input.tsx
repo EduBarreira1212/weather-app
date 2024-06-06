@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import getGeoCoding from "../services/getGeoCoding";
 import { setCityAction, setTodayWeatherAction, setWeatherAction } from "../redux/weatherReducer/actions";
 import store from "../redux/store";
@@ -37,8 +37,14 @@ const Input = () => {
 
     const cityRef = useRef<HTMLInputElement>(null)
 
+    const [error, setError] = useState<string | null>(null);
+
     const handleClick = async () => {
         const cityGeoCode = await getGeoCoding(cityRef.current?.value || "");
+        if (cityGeoCode.length === 0) {
+            setError("Insert a valid city");
+            return;
+        }
         store.dispatch(setCityAction(cityGeoCode));
         const todayWeather = await getTodayWeather(cityGeoCode[0].lat, cityGeoCode[0].lon);
         store.dispatch(setTodayWeatherAction(todayWeather!));
@@ -52,6 +58,7 @@ const Input = () => {
                 <StyledInput ref={cityRef} type='text' placeholder='Ex: Miami,FL,US'/>
                 <Button onClick={handleClick}>Search</Button>
             </div>
+            {error && <span>{error}</span>}
         </FormContainer>
     );
 }
