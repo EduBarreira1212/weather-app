@@ -49,6 +49,7 @@ const Input = () => {
         const cityGeoCode = await getGeoCoding(cityRef.current?.value || "");
         if (cityGeoCode.length === 0) {
             setError("Insert a valid city");
+            cityRef.current?.focus();
             return;
         }
         setError(null);
