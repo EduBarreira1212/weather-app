@@ -75,6 +75,7 @@ const TodayWeather = () => {
                     <Div3>
                         <SpanTemp>{currentTodayWeather.main.temp.toFixed(1)} ºC</SpanTemp>
                         <SpanIcon>{weatherIcons[currentTodayWeather.weather[0].main]}</SpanIcon>
+                        <Span>{currentTodayWeather.weather[0].description}</Span>
                     </Div3>
                     <Div2>
                         <Span>{currentTodayWeather.main.temp_max.toFixed(1)} ºC</Span>
