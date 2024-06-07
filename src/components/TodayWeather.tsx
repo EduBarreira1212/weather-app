@@ -10,6 +10,7 @@ const Div = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 2vh;
+    padding-top: 1.5vh;
     padding-bottom: 3vh;
     border-radius: 8px;
     box-shadow: 5px 5px 8px black;
