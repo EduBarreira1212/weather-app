@@ -17,8 +17,8 @@ export type ICityList = ICity[] | any
 export interface IState {
     weatherReducer: {
         currentCity: ICity
-        currentWeather: IFilteredForecast[]
-        currentTodayWeather: IFilteredTodayApiResponse
+        currentWeather: IFilteredTodayApiResponse
+        currentForecast:  IFilteredForecast[]
     }
 }
 
