@@ -46,6 +46,11 @@ const Input = () => {
     const [error, setError] = useState<string | null>(null);
 
     const handleClick = async () => {
+        if(cityRef.current?.value === ""){
+            setError("Insert a city");
+            cityRef.current?.focus();
+            return;
+        }
         const cityGeoCode = await getGeoCoding(cityRef.current?.value || "");
         if (cityGeoCode.length === 0) {
             setError("Insert a valid city");
