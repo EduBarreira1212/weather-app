@@ -35,16 +35,16 @@ const Span = styled.span`
 
 const FiveDaysWeather = () => {
 
-    const { currentWeather } = useSelector((state: IState) => state.weatherReducer);
+    const { currentForecast } = useSelector((state: IState) => state.weatherReducer);
 
     const date = new Date();
 
     return(
         <>
-            {currentWeather ? (
+            {currentForecast ? (
                 <Div>
                     <H4>Next days</H4>
-                    {currentWeather
+                    {currentForecast
                     .filter(weather => weather.date !== date.toLocaleDateString("en-US", {weekday: "long"}))
                     .map((weather, index) => (
                     <Div2 key={index}>

@@ -65,23 +65,23 @@ const DivIcon = styled.div`
 
 const TodayWeather = () => {
     const { currentCity } = useSelector((state: IState) => state.weatherReducer);
-    const { currentTodayWeather } = useSelector((state: IState) => state.weatherReducer);
+    const { currentWeather } = useSelector((state: IState) => state.weatherReducer);
 
     return(
         <>
-            {currentCity && currentTodayWeather ? (
+            {currentCity && currentWeather ? (
                 <Div>
                     <H3>{currentCity.name}, {currentCity.state}, {currentCity.country}</H3>
                     <P>Today</P>
                     <Div3>
-                        <SpanTemp>{currentTodayWeather.main.temp.toFixed(1)} ºC</SpanTemp>
-                        <SpanIcon>{weatherIcons[currentTodayWeather.weather[0].main]}</SpanIcon>
-                        <Span>{currentTodayWeather.weather[0].description}</Span>
+                        <SpanTemp>{currentWeather.main.temp.toFixed(1)} ºC</SpanTemp>
+                        <SpanIcon>{weatherIcons[currentWeather.weather[0].main]}</SpanIcon>
+                        <Span>{currentWeather.weather[0].description}</Span>
                     </Div3>
                     <Div2>
-                        <Span>{currentTodayWeather.main.temp_max.toFixed(1)} ºC</Span>
+                        <Span>{currentWeather.main.temp_max.toFixed(1)} ºC</Span>
                         <Span>/</Span>
-                        <Span>{currentTodayWeather.main.temp_min.toFixed(1)} ºC</Span>
+                        <Span>{currentWeather.main.temp_min.toFixed(1)} ºC</Span>
                     </Div2>
                 </Div>
                 ) : (
