@@ -4,7 +4,7 @@ import weatherActionTypes from "./action-types";
 const initialState = {
     currentCity: null,
     currentWeather: null,
-    currentTodayWeather: null,
+    currentForecast: null,
 };
 
 const weatherReducer = (state = initialState, action: IAction) => {
@@ -13,8 +13,8 @@ const weatherReducer = (state = initialState, action: IAction) => {
             return { ...state, currentCity: action.payload };
         case weatherActionTypes.SET_WEATHER:
             return { ...state, currentWeather: action.payload };
-        case weatherActionTypes.SET_TODAY_WEATHER:
-            return {...state, currentTodayWeather: action.payload}
+        case weatherActionTypes.SET_FORECAST:
+            return {...state, currentForecast: action.payload}
         default:
             return state;
     }
