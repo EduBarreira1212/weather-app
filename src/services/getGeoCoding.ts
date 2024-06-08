@@ -6,7 +6,7 @@ const apiKey = process.env.REACT_APP_API_KEY;
 const getGeoCoding = async (city: string) => {
     try {
         const response = await axios.get<ICityList>(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`)
-        return response.data;
+        return response.data[0];
     } catch (error) {
         console.log("Error fetching data:", error);
     }

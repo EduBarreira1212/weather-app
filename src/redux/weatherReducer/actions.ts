@@ -1,9 +1,9 @@
-import { IAction, ICityList, IFilteredForecast, IFilteredTodayApiResponse } from "../../types/allTypes";
+import { IAction, ICity, IFilteredForecast, IFilteredTodayApiResponse } from "../../types/allTypes";
 import weatherActionTypes from "./action-types";
 
-export const setCityAction = (city: ICityList): IAction => ({
+export const setCityAction = (city: ICity): IAction => ({
     type: weatherActionTypes.SET_CITY,
-    payload: city[0]
+    payload: city
 })
 
 export const setWeatherAction = (TodayWeather: IFilteredTodayApiResponse):IAction => ({

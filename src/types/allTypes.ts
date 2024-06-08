@@ -12,7 +12,7 @@ export interface ICity {
     state: string
 }
 
-export type ICityList = ICity[] | any
+export type ICityList = ICity[]
 
 export interface IState {
     weatherReducer: {
