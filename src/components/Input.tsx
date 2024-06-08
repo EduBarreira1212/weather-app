@@ -52,16 +52,16 @@ const Input = () => {
             return;
         }
         const cityGeoCode = await getGeoCoding(cityRef.current?.value || "");
-        if (cityGeoCode.length === 0) {
+        if (cityGeoCode === undefined) {
             setError("Insert a valid city");
             cityRef.current?.focus();
             return;
         }
         setError(null);
         store.dispatch(setCityAction(cityGeoCode));
-        const todayWeather = await getTodayWeather(cityGeoCode[0].lat, cityGeoCode[0].lon);
+        const todayWeather = await getTodayWeather(cityGeoCode.lat, cityGeoCode.lon);
         store.dispatch(setWeatherAction(todayWeather!));
-        const weather = await getFiveDaysWeather(cityGeoCode[0].lat, cityGeoCode[0].lon);
+        const weather = await getFiveDaysWeather(cityGeoCode.lat, cityGeoCode.lon);
         store.dispatch(setForecastAction(weather!));
     }
     return(
