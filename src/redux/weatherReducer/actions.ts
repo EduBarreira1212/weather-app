@@ -6,12 +6,12 @@ export const setCityAction = (city: ICityList): IAction => ({
     payload: city[0]
 })
 
-export const setWeatherAction = (weather: IFilteredForecast[]):IAction => ({
+export const setWeatherAction = (TodayWeather: IFilteredTodayApiResponse):IAction => ({
     type: weatherActionTypes.SET_WEATHER,
-    payload: weather
+    payload: TodayWeather
 })
 
-export const setTodayWeatherAction = (TodayWeather: IFilteredTodayApiResponse):IAction => ({
-    type: weatherActionTypes.SET_TODAY_WEATHER,
-    payload: TodayWeather
+export const setForecastAction = (weather: IFilteredForecast[]):IAction => ({
+    type: weatherActionTypes.SET_FORECAST,
+    payload: weather
 })
